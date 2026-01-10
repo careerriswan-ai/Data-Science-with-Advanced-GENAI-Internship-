@@ -1,0 +1,14 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hi i am Riswan!"
+@app.route('/hello')
+def hello():
+    name = request.args.get('name', 'Guest')
+    return f"HELLO {name.upper()}"
+
+if __name__ =='__main__':
+    app.run(debug=True)
