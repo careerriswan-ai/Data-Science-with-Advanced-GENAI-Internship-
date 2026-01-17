@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Matcher - Flask</title>
+</head>
+<body>
+
+    <h2>Regex Matcher (Flask App)</h2>
+
+    <form method="POST">
+        <p>Test String:</p>
+        <textarea name="test_string" rows="5" cols="50"></textarea>
+
+        <p>Regular Expression:</p>
+        <input type="text" name="regex">
+
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Matches:</h3>
+
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+
+    {% if matches %}
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matches found</p>
+    {% endif %}
+
+</body>
+</html>
